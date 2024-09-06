@@ -36,10 +36,28 @@
    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 11) docker exec -it jenkins bash
-12) Create a New Job: my-first-job
-    -------------------------------
+12) job-1: Create a New Job: my-first-job
+    -------------------------------------
 	Dashboard-->New Item -->Enter an item name-->my-first-job-->Freestyle project-->OK-->Build-->Add Build Step-->Execute Shell-->
         Command--->
 	echo Hello World
 	--> Save--Build Now-->Build History-->Console Output
-13) 
+    ## workspace /var/jenkins_home/workspace/my-first-job
+14) ## job-2: used this command in Jenkins command :
+    ## On Jenkins shell:
+        echo "current date and Time is: $(date)"
+        echo "current user is: $(whoami)"
+15) ## job-3: used this command in Jenkins command :
+    ## On Jenkins shell:
+    	NAME="Unni K"
+        echo "Hello, $NAME. The current date and time is: $(date)"
+16) ## job-4: used this command in Jenkins command :
+    ## On Jenkins shell:
+    	echo "Hello $NAME. The current date and time is: $(date)" > /tmp/info
+    jenkins@8ce69885d87a:~$ cat /tmp/info
+    jenkins@8ce69885d87a:~$ rm -f /tmp/info
+    jenkins@8ce69885d87a:~$ cat /tmp/info
+    --> run the job again
+    jenkins@8ce69885d87a:~$ cat /tmp/info
+18) 
+    	
