@@ -84,7 +84,8 @@
 	LASTNAME1=KM
 	/tmp/script.sh $NAME1 $LASTNAME1
 
-23) vi /tmp/script.sh
+23) ##Add basic logic & Boolean parameters
+    vi /tmp/script.sh
 	#!/bin/bash
 	NAME=$1
 	LASTNAME=$2
@@ -108,3 +109,42 @@
     $ ./tmp/script.sh Unni KM true
 	Hello, Unni KM
     	
+24) ##Above script Running through Jenkins
+--------------------------------------------------------------------------------------------
+	Jenkins parameters:
+--------------------------------------------------------------------------------------------
+	FIRST_NAME
+	Unni ---> Default value
+	
+	LASTNAME
+	choices:
+	Tom
+	Myliatt
+	Smith
+	Doe
+	
+	Boolean Parameter
+	SHOW
+	Set by Default --> this checkbox make the value `true` by default
+
+	##command shell:
+	/tmp/script.sh $FIRST_NAME $LASTNAME $SHOW
+------------------------------------------------------------------------------------------------
+	Console Output
+	Started by user Jenkins Admin
+	Running as SYSTEM
+	Building in workspace /var/jenkins_home/workspace/my-first-job
+	[my-first-job] $ /bin/sh -xe /tmp/jenkins12555385524419567693.sh
+	+ /tmp/script.sh Unni Myliatt true
+	Hello, Unni Myliatt
+	Finished: SUCCESS
+------------------------------------------------------------------------------------------------
+	Console Output
+	Started by user Jenkins Admin
+	Running as SYSTEM
+	Building in workspace /var/jenkins_home/workspace/my-first-job
+	[my-first-job] $ /bin/sh -xe /tmp/jenkins8328500223048601920.sh
+	+ /tmp/script.sh Unni Doe false
+	If you want to see the Name, Please mark the SHOW option
+	Finished: SUCCESS
+ ------------------------------------------------------------------------------------------------
