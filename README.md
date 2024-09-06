@@ -59,7 +59,9 @@
     jenkins@8ce69885d87a:~$ cat /tmp/info
     --> run the job again
     jenkins@8ce69885d87a:~$ cat /tmp/info
-18) Create a script in Local File system
+    
+18) Create a script in Local File system & copy to docker container
+    ##Note: vi editor won't be available inside Docker container 
     vi script.sh
 	#!/bin/bash
 	NAME=$1
@@ -67,5 +69,42 @@
 	echo "Hello, $NAME $LASTNAME"
     chmod +x script.sh
     ./script.sh Unni KM
+    
 20) docker cp script.sh jenkins:/tmp/script.sh
+    docker exec -it jenkins bash
+    ls -l /tmp/script.sh
+    cat /tmp/script.sh
+    
+22) ##From Jenkins:
+    ##On Jenkins shell:
+	/tmp/script.sh Unni KM
+   ##OR
+   ##On Jenkins shell:
+	NAME1=Unni
+	LASTNAME1=KM
+	/tmp/script.sh $NAME1 $LASTNAME1
+
+23) vi /tmp/script.sh
+	#!/bin/bash
+	NAME=$1
+	LASTNAME=$2
+	SHOW=$3
+	
+	if [ "$SHOW" = "true" ]; then
+	    echo "Hello, $NAME $LASTNAME"
+	else
+	    echo "If you want to see the Name, Please mark the SHOW option"
+	fi
+
+    $ ./tmp/script.sh
+	If you want to see the Name, Please mark the SHOW option
+
+    $ ./tmp/script.sh Unni KM
+	If you want to see the Name, Please mark the SHOW option
+
+    $ ./tmp/script.sh Unni KM false
+	If you want to see the Name, Please mark the SHOW option
+
+    $ ./tmp/script.sh Unni KM true
+	Hello, Unni KM
     	
