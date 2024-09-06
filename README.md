@@ -42,22 +42,30 @@
         Command--->
 	echo Hello World
 	--> Save--Build Now-->Build History-->Console Output
-    ## workspace /var/jenkins_home/workspace/my-first-job
+    ##workspace /var/jenkins_home/workspace/my-first-job
 14) ## job-2: used this command in Jenkins command :
-    ## On Jenkins shell:
+    ##On Jenkins shell:
         echo "current date and Time is: $(date)"
         echo "current user is: $(whoami)"
 15) ## job-3: used this command in Jenkins command :
-    ## On Jenkins shell:
+    ##On Jenkins shell:
     	NAME="Unni K"
         echo "Hello, $NAME. The current date and time is: $(date)"
 16) ## job-4: used this command in Jenkins command :
-    ## On Jenkins shell:
+    ##On Jenkins shell:
     	echo "Hello $NAME. The current date and time is: $(date)" > /tmp/info
     jenkins@8ce69885d87a:~$ cat /tmp/info
     jenkins@8ce69885d87a:~$ rm -f /tmp/info
     jenkins@8ce69885d87a:~$ cat /tmp/info
     --> run the job again
     jenkins@8ce69885d87a:~$ cat /tmp/info
-18) 
+18) Create a script in Local File system
+    vi script.sh
+	#!/bin/bash
+	NAME=$1
+	LASTNAME=$2
+	echo "Hello, $NAME $LASTNAME"
+    chmod +x script.sh
+    ./script.sh Unni KM
+20) docker cp script.sh jenkins:/tmp/script.sh
     	
