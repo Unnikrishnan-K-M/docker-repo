@@ -35,4 +35,11 @@
       pwd: 1234
    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-11) 
+11) docker exec -it jenkins bash
+12) Create a New Job: my-first-job
+    -------------------------------
+	Dashboard-->New Item -->Enter an item name-->my-first-job-->Freestyle project-->OK-->Build-->Add Build Step-->Execute Shell-->
+        Command--->
+	echo Hello World
+	--> Save--Build Now-->Build History-->Console Output
+13) 
