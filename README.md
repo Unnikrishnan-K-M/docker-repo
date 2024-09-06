@@ -5,19 +5,22 @@
 2) sudo chmod +x /usr/local/bin/docker-compose
 3) docker pull jenkins/jenkins
 4) docker images
-5) Location where the docker files will be stored:
+5) docker ps
+6) docker ps -a   --> shows the container with exit status.
+7) Location where the docker files will be stored:
    $ docker info | grep -i root
       Docker Root Dir: /var/lib/docker
    $ sudo du -sh /var/lib/docker
       3.8G    /var/lib/docker
-7) Note:--once jenkins docker container is created, the id of the jenkins user inside it will be 1000
+8) Note:--once jenkins docker container is created, the id of the jenkins user inside it will be 1000
       #Change file/directories ownership recursively in Linux
       $ sudo chown 1000:1000 jenkins_home -R
-8) docker logs -f <container-name>
+9) docker logs -f <container-name>
       docker logs -f jenkins
-9) ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+10)
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		Setup Local DNS For Jenkins:
-   ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       1)Right click on a notepad & Run as Administrator 
       2) Open below file
       C:\Windows\System32\drivers\etc\hosts
@@ -31,3 +34,5 @@
       user name: admin
       pwd: 1234
    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+11) 
